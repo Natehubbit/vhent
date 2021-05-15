@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.container {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  .btn {
+    &.active {
+      color: $primary;
+    }
+    &:hover {
+      text-decoration: none !important;
+      color: $primary;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "nunito";
+  src: url("/fonts/nunito/Nunito-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "firaSans";
+  src: url("/fonts/firaSans/FiraSans-Medium.ttf");
+  font-style: medium;
+  font-weight: 500;
+  font-display: swap;
+}
+
+body {
+  font-family: nunito;
+}

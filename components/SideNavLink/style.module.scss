@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.container {
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  font-family: firaSans;
+  &.active {
+    color: $primary;
+  }
+  a {
+    margin-left: 10px;
+  }
+  &:hover {
+    text-decoration: none !important;
+    color: $primary;
+  }
+}

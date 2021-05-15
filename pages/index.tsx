@@ -1,15 +1,6 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import { sampleUserData } from "../utils/sample-data";
+import Stories from "./stories";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+const IndexPage = () => <Stories items={sampleUserData} />;
 
-export default IndexPage
+export default IndexPage;
