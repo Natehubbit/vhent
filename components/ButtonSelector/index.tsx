@@ -6,7 +6,7 @@ import {
   MenuList,
 } from "@chakra-ui/menu";
 import React, { FC, useState } from "react";
-import { Box, Text, Flex } from "@chakra-ui/layout";
+import { Text, Flex } from "@chakra-ui/layout";
 
 interface ButtonSelectProps {
   options: { label: string; value: string }[];
