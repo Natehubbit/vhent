@@ -1,4 +1,3 @@
-import { Button } from "@chakra-ui/button";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
   Menu,
@@ -7,7 +6,7 @@ import {
   MenuList,
 } from "@chakra-ui/menu";
 import React, { FC, useState } from "react";
-import { Box, Text, Flex } from '@chakra-ui/layout';
+import { Box, Text, Flex } from "@chakra-ui/layout";
 
 interface ButtonSelectProps {
   options: { label: string; value: string }[];
@@ -21,15 +20,20 @@ const ButtonSelector: FC<ButtonSelectProps> = ({
     setValue(val);
   };
   return (
-    <Menu gutter={2} colorScheme='purple' placement="bottom-end">
+    <Menu
+      gutter={2}
+      colorScheme="purple"
+      placement="bottom-end"
+    >
       <MenuButton>
         <Flex
-          alignItems='center'
-          bg='purple.50'
-          p='1'
-          px='3'
-          borderRadius='md'>
-          <Text mr='2'>
+          alignItems="center"
+          bg="purple.50"
+          p="1"
+          px="3"
+          borderRadius="md"
+        >
+          <Text mr="2">
             {
               options.find((opt) => opt.value === value)
                 ?.label
@@ -43,13 +47,13 @@ const ButtonSelector: FC<ButtonSelectProps> = ({
           return (
             <MenuItem
               _hover={{
-                backgroundColor: 'purple.100'
+                backgroundColor: "purple.100",
               }}
               _focus={{
-                backgroundColor: 'purple.100'
+                backgroundColor: "purple.100",
               }}
               key={opt.value}
-              fontSize='md'
+              fontSize="md"
               onClick={() => onSelect(opt.value)}
             >
               {opt.label}
