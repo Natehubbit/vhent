@@ -4,14 +4,17 @@ import styles from "./style.module.scss";
 
 interface AvatarProps {
   uri: string;
-  size?: "lg" | "xs";
+  size?: "sm" | "xs" | 'lg';
 }
 
 const Avatar: FC<AvatarProps> = ({ uri, size }) => {
   const isSmall = size === "xs";
+  const isSm = size === 'sm'
   const dimensions = isSmall
     ? { height: 50, width: 50 }
-    : { height: 100, width: 100 };
+    : isSm
+      ? { height: 100, width: 100 }
+      : { height: 200, width: 200 }
   return (
     <Image
       className={styles.container}

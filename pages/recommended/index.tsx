@@ -1,11 +1,11 @@
 import React from "react";
-import Content from "../../components/Content";
 import Layout from "../../components/Layout";
+import Recommendations from "../../components/Recommendations";
 
 const Recommended = () => {
   return (
     <Layout title="vhent | Recommended">
-      <Content />
+      <Recommendations />
     </Layout>
   );
 };

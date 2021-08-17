@@ -17,7 +17,7 @@ const BottomTab = (_: BottomTabProps) => {
   const { route } = useRouter();
   const [activeLink, setActiveLink] = useState(route);
   useEffect(() => {
-    setActiveLink(route);
+    setActiveLink(route === '/' ? '/stories' : route);
   }, [route]);
   const onNav = (route: AppRoute) => {
     setActiveLink(route);
@@ -25,7 +25,7 @@ const BottomTab = (_: BottomTabProps) => {
   return (
     <HStack
       className={styles.container}
-      boxShadow="2xl"
+      shadow="inner"
       p={3}
       justifyContent="center"
       bg={COLORS.white}
@@ -36,12 +36,13 @@ const BottomTab = (_: BottomTabProps) => {
         const { icon, path } = ROUTES[key];
         const active = path === activeLink;
         return (
-          <Link href={path}>
+          <Link key={key} href={path}>
             <IconButton
               className={cn({
                 btn: true,
-                active,
+                active: active || activeLink === '/',
               })}
+              key={key}
               variant="link"
               aria-label={k}
               onClick={() => onNav(path)}

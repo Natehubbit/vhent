@@ -14,8 +14,8 @@ export const ROUTES = {
     path: "/recommended",
     icon: <Icon as={MdStar} fontSize={25} m={1} />,
   },
-  ["Boo List"]: {
-    path: "/boo",
+  Profile: {
+    path: "/profile",
     icon: <Icon as={MdThumbDown} fontSize={25} m={1} />,
   },
 } as const;

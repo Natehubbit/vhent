@@ -1,6 +1,7 @@
 import { Button, IconButton } from "@chakra-ui/button";
 import { Box, HStack, Text } from "@chakra-ui/layout";
 import { Textarea } from "@chakra-ui/textarea";
+import { Collapse } from "@chakra-ui/transition";
 import React, { FC, useState } from "react";
 import {
   AiOutlineComment,
@@ -36,7 +37,7 @@ const CardAction: FC<CardActionProps> = ({ actions }) => {
       like: { ...a.like, liked: !a.like.liked },
     }));
   };
-  const onComment = () => {};
+  const onComment = () => { };
   const {
     comment: { count: commentCount },
     like: { count: likeCount },
@@ -44,7 +45,11 @@ const CardAction: FC<CardActionProps> = ({ actions }) => {
   return (
     <>
       <HStack>
-        <IconButton onClick={onLike} aria-label="like">
+        <IconButton
+          onClick={onLike}
+          aria-label="like"
+          variant='ghost'
+        >
           <>
             {isLiked ? (
               <AiFillHeart color={COLORS.red} />
@@ -65,6 +70,7 @@ const CardAction: FC<CardActionProps> = ({ actions }) => {
         <IconButton
           onClick={toggleComment}
           aria-label="comment"
+          variant='ghost'
         >
           <>
             <AiOutlineComment color={COLORS.primary} />
@@ -79,11 +85,14 @@ const CardAction: FC<CardActionProps> = ({ actions }) => {
             </Text>
           </>
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton
+          aria-label="share"
+          variant='ghost'
+        >
           <AiOutlineShareAlt />
         </IconButton>
       </HStack>
-      {commenting && (
+      <Collapse in={commenting} animateOpacity>
         <Box mt={5}>
           <Textarea
             bg={COLORS.white}
@@ -105,7 +114,7 @@ const CardAction: FC<CardActionProps> = ({ actions }) => {
             </Button>
           </HStack>
         </Box>
-      )}
+      </Collapse>
     </>
   );
 };

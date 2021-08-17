@@ -2,7 +2,6 @@ import React, { ReactNode } from "react";
 import Head from "next/head";
 import { Box, Flex } from "@chakra-ui/layout";
 import Sidebar from "../Sidebar";
-import BottomTab from "../BottomTab";
 import Footer from "../Footer";
 
 type Props = {
